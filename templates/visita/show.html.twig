@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visita {{ visita.id }}{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>Visita {{ visita.id }}</h1>
+    <br>
+    <h2>{{ visita.Descricao }}</h2>
+    <br>
+    <h2>{{ visita.DataVisita|date("d/m/Y") }}</h2>
+    <br>
+    <h2>{{ visita.IdFamilia }}</h2>
+    <br>
+{% endblock %}
