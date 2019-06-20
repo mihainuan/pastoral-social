@@ -5,9 +5,9 @@ namespace App\Controller;
 use App\Entity\Visita;
 use App\Form\VisitaType;
 use App\Repository\VisitaRepository;
-use function Composer\Autoload\includeFile;
-use Symfony\Component\HttpFoundation\Request;
+use App\Services\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -33,7 +33,7 @@ class VisitaController extends AbstractController
      * @Route("/criar", name="criar")
      * @param Request $request
      */
-    public function create(Request $request)
+    public function create(Request $request, FileUploader $fileUploader)
     {
         //Cria uma nova visita
         $visita = new Visita();
@@ -50,23 +50,13 @@ class VisitaController extends AbstractController
 
             /** @var UploadedFile $file */
            $file = $request->files->get('visita')['attachment'];
-
             //Check if I have the file before I upload
             if($file){
-                $filename = md5(uniqid()) . '.' . $file->guessClientExtension();
-
-                //Move file to uploads_dir
-                $file->move(
-                    $this->getParameter('uploads_dir'),
-                    $filename
-                );
-
+                $filename = $fileUploader->uploadFile($file);
                 $visita->setImagem($filename);
-
                 $em->persist($visita);
                 $em->flush();
             }
-
             return $this->redirect($this->generateUrl('visita.index'));
         }
 
@@ -75,9 +65,6 @@ class VisitaController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-
-
-
 
     /**
      * @Route("/exibir/{id}", name="exibir")

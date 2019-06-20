@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use mysql_xdevapi\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FamiliaRepository")
@@ -121,7 +121,7 @@ class Familia
 
     public function __toString()
     {
-       return $this->NomeFamilia;
+        return $this->NomeFamilia;
     }
 
 
@@ -166,12 +166,12 @@ class Familia
         return $this;
     }
 
-    public function getDataCadastro(): ?\DateTimeInterface
+    public function getDataCadastro(): ?DateTimeInterface
     {
         return $this->DataCadastro;
     }
 
-    public function setDataCadastro(\DateTimeInterface $DataCadastro): self
+    public function setDataCadastro(DateTimeInterface $DataCadastro): self
     {
         $this->DataCadastro = $DataCadastro;
 
