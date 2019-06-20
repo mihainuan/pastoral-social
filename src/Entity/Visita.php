@@ -31,6 +31,12 @@ class Visita
      */
     private $idFamilia;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imagem;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +74,18 @@ class Visita
     public function setIdFamilia(int $idFamilia): self
     {
         $this->idFamilia = $idFamilia;
+
+        return $this;
+    }
+
+    public function getImagem(): ?string
+    {
+        return $this->imagem;
+    }
+
+    public function setImagem(?string $imagem): self
+    {
+        $this->imagem = $imagem;
 
         return $this;
     }

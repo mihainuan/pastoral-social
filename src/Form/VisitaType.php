@@ -17,9 +17,9 @@ class VisitaType extends AbstractType
             ->add('Descricao')
             ->add('DataVisita')
             ->add('IdFamilia')
-//            ->add('imagem', FileType::class, [
-//                'mapped' => false
-//            ])
+            ->add('attachment', FileType::class, [
+                'mapped' => false
+            ])
             ->add('salvar',SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary float-right'

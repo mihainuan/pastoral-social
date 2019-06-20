@@ -37,10 +37,6 @@ class VisitaController extends AbstractController
     {
         //Cria uma nova visita
         $visita = new Visita();
-//        $visita->setIdFamilia(1);
-//        $visita->setDescricao('Uma nova Visita');
-//        $visita->setDataVisita('09/27/2019');
-
 
         $form = $this->createForm(VisitaType::class, $visita);
 //
@@ -48,30 +44,31 @@ class VisitaController extends AbstractController
         $form->getErrors();
 
         if($form->isSubmitted()){
+
             //Entity Manager
             $em = $this->getDoctrine()->getManager();
 
-//            /** @var UploadedFile $file */
-//            $file = $request->files->get('visita')['imagem'];
+            /** @var UploadedFile $file */
+//            $file = $request->files->get('attachment');
+           $file = $request->files->get('visita')['attachment'];
 //           $file = $request->files->get('visita')['imagem'];
 //           dump($file);
 
             //Check if I have the file before I upload
-//            if($file){
-//                $filename = md5(uniqid()) . '.' . $file->guessClientExtension();
-//
-//                //Move file to uploads_dir
-//                $file->move(
-//                    $this->getParameter('uploads_dir'),
-//                    $filename
-//                );
+            if($file){
+                $filename = md5(uniqid()) . '.' . $file->guessClientExtension();
 
-//                $visita->setImagem($filename);
+                //Move file to uploads_dir
+                $file->move(
+                    $this->getParameter('uploads_dir'),
+                    $filename
+                );
+
+                $visita->setImagem($filename);
 
                 $em->persist($visita);
                 $em->flush();
-
-//            }
+            }
 
             return $this->redirect($this->generateUrl('visita.index'));
 //            return new Response('Visita Criada!');

@@ -2,36 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc57701d-a27d-4044-966f-a6e41ac8bff1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pastoral-social.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/VisitaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Visita.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/VisitaRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/visita/criar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/visita/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/visita/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/VisitaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VisitaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Visita.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Visita.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/VisitaType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VisitaType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/visita/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/visita/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +27,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Visita.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="494">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/VisitaType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+              <folding>
+                <element signature="e#28#50#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/VisitaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
+            <state relative-caret-position="360">
+              <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
@@ -69,10 +58,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Security/UserAuthenticator.php">
+        <entry file="file://$PROJECT_DIR$/templates/visita/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="588">
+              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/visita/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -80,68 +78,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="684">
               <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/RegistrationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="813">
-              <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
-              <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#34#99#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/visita/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/config/services.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+            <state relative-caret-position="257">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -157,19 +119,20 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/templates/visita/criar.html.twig" />
-        <option value="$PROJECT_DIR$/templates/visita/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/visita/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Form/VisitaType.php" />
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
-        <option value="$PROJECT_DIR$/src/Entity/Visita.php" />
         <option value="$PROJECT_DIR$/src/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/templates/registration/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/Security/UserAuthenticator.php" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/VisitaController.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Visita.php" />
+        <option value="$PROJECT_DIR$/src/Form/VisitaType.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/VisitaController.php" />
+        <option value="$PROJECT_DIR$/templates/visita/show.html.twig" />
       </list>
     </option>
   </component>
@@ -285,6 +248,17 @@
             <path>
               <item name="pastoral-social" type="b2602c69:ProjectViewProjectNode" />
               <item name="pastoral-social" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pastoral-social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pastoral-social" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pastoral-social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pastoral-social" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -368,12 +342,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561016944068</updated>
-      <workItem from="1561016946560" duration="6525000" />
+      <workItem from="1561016946560" duration="8372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6525000" />
+    <option name="totallyTimeSpent" value="8372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -464,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/visita/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/visita/criar.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -485,17 +452,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/VisitaType.php">
+    <entry file="file://$PROJECT_DIR$/templates/registration/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+        <state relative-caret-position="112">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="546">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#34#99#0#PHP" expanded="true" />
           </folding>
@@ -504,10 +471,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+        <state relative-caret-position="633">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="68" />
           <folding>
             <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/VisitaType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <element signature="e#28#50#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -519,55 +510,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="684">
           <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/c77ffd6f1cf1d3575bd6b4788a5f459b.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/6e1e5704d0e470694ebd459451e8d55e.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/6177e02c8885d2bf94015ed9f56688cd.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Visita.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/VisitaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
+        <state relative-caret-position="360">
+          <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Visita.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/visita/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
+        <state relative-caret-position="588">
           <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/visita/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        <state relative-caret-position="234">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
         </state>
       </provider>
     </entry>
