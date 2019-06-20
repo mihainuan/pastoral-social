@@ -49,10 +49,7 @@ class VisitaController extends AbstractController
             $em = $this->getDoctrine()->getManager();
 
             /** @var UploadedFile $file */
-//            $file = $request->files->get('attachment');
            $file = $request->files->get('visita')['attachment'];
-//           $file = $request->files->get('visita')['imagem'];
-//           dump($file);
 
             //Check if I have the file before I upload
             if($file){
@@ -71,7 +68,6 @@ class VisitaController extends AbstractController
             }
 
             return $this->redirect($this->generateUrl('visita.index'));
-//            return new Response('Visita Criada!');
         }
 
         //Returns a response

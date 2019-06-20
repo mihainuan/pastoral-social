@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Visita {{ visita.id }}{% endblock %}
+{% block title %}# Visita: {{ visita.id}}{% endblock %}
 
 {% block body %}
     <br>
+    <h1>{{'# Família: ' ~  visita.familia.id ~ ' - ' ~ visita.familia }}</h1><br>
     <img src="{{ '/uploads/'~ visita.imagem }}">
-    <br>
-    <h1>Visita {{ visita.id }}</h1>
+
+    <h1># Visita: {{ visita.id}}</h1>
     <br>
     <h2>{{ visita.Descricao }}</h2>
     <br>
     <h2>{{ visita.DataVisita|date("d/m/Y") }}</h2>
-    <br>
-    <h2>{{ visita.IdFamilia }}</h2>
+
     <br>
 {% endblock %}

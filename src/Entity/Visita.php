@@ -27,9 +27,9 @@ class Visita
     private $DataVisita;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Familia", inversedBy="visita")
      */
-    private $idFamilia;
+    private $familia;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -66,17 +66,18 @@ class Visita
         return $this;
     }
 
-    public function getIdFamilia(): ?int
-    {
-        return $this->idFamilia;
-    }
-
-    public function setIdFamilia(int $idFamilia): self
-    {
-        $this->idFamilia = $idFamilia;
-
-        return $this;
-    }
+//    //FK
+//    public function getFamilia(): ?Familia
+//    {
+//        return $this->familia;
+//    }
+//
+//    public function setFamilia(?Familia $familia): self
+//    {
+//        $this->familia = $familia;
+//
+//        return $this;
+//    }
 
     public function getImagem(): ?string
     {
@@ -86,6 +87,18 @@ class Visita
     public function setImagem(?string $imagem): self
     {
         $this->imagem = $imagem;
+
+        return $this;
+    }
+
+    public function getFamilia(): ?Familia
+    {
+        return $this->familia;
+    }
+
+    public function setFamilia(?Familia $familia): self
+    {
+        $this->familia = $familia;
 
         return $this;
     }

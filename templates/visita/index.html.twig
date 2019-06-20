@@ -18,10 +18,10 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>Id</td>
+            <td>#</td>
+            <td>Família</td>
             <td>Descrição</td>
             <td>Data Visita</td>
-            <td>IdFamília</td>
             <td>Ações</td>
         </tr>
         </thead>
@@ -29,13 +29,13 @@
         {%  for visita in visitas %}
             <tr>
                 <td>{{ visita.id }}</td>
+                <td>{{ visita.familia }}</td>
                 <td>-
                     <a href="{{ path('visita.exibir', {id: visita.id}) }}">
                         {{ visita.descricao }}
                     </a>
                 </td>
                 <td>{{ visita.DataVisita|date("d/m/Y") }}</td>
-                <td>{{ visita.idFamilia }}</td>
                 <td>
                     <a class="text-danger" href="{{ path('visita.remover', {id: visita.id}) }}">
                         Remover</a>
