@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}# Pessoa: {{ pessoa.id }}{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>{{ '# Família: ' ~  pessoa.familia.id ~ ' - ' ~ pessoa.familia }}</h1><br>
+    <img src="{{ '/uploads/'~ pessoa.imagem }}">
+
+    <h1># Pessoa: {{ pessoa.id }}</h1>
+    <br>
+    <h2>{{ pessoa.Descricao }}</h2>
+    <br>
+    <h2>{{ pessoa.DataPessoa|date("d/m/Y") }}</h2>
+
+    <br>
+{% endblock %}

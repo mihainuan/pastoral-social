@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}# Cesta: {{ cesta.id }}{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>{{ '# Família: ' ~  cesta.familia.id ~ ' - ' ~ cesta.familia }}</h1><br>
+    <img src="{{ '/uploads/'~ cesta.imagem }}">
+
+    <h1># Cesta: {{ cesta.id }}</h1>
+    <br>
+    <h2>{{ cesta.Descricao }}</h2>
+    <br>
+    <h2>{{ cesta.DataCesta|date("d/m/Y") }}</h2>
+
+    <br>
+{% endblock %}

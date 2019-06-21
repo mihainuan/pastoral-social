@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}✅ Lista de Visitas ✅{% endblock %}
+{% block title %}Registro de Visitas &#128583;{% endblock %}
 
 {% block body %}
 
@@ -13,8 +13,10 @@
     {% endfor %}
 
     <br>
-    <h2>✅ Lista de Visitas ✅</h2>
+    <h2>&#128583; Registro de Visitas</h2><a class="btn btn-outline-primary float-right"
+                                             href="{{ path('visita.criar') }}">&#10133; Nova Visita</a> <br>
     <br>
+
     <table class="table table-striped">
         <thead>
         <tr>

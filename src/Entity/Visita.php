@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -54,30 +55,17 @@ class Visita
         return $this;
     }
 
-    public function getDataVisita(): ?\DateTimeInterface
+    public function getDataVisita(): ?DateTimeInterface
     {
         return $this->DataVisita;
     }
 
-    public function setDataVisita(?\DateTimeInterface $DataVisita): self
+    public function setDataVisita(?DateTimeInterface $DataVisita): self
     {
         $this->DataVisita = $DataVisita;
 
         return $this;
     }
-
-//    //FK
-//    public function getFamilia(): ?Familia
-//    {
-//        return $this->familia;
-//    }
-//
-//    public function setFamilia(?Familia $familia): self
-//    {
-//        $this->familia = $familia;
-//
-//        return $this;
-//    }
 
     public function getImagem(): ?string
     {
@@ -102,4 +90,5 @@ class Visita
 
         return $this;
     }
+
 }

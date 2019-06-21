@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}# Família: {{ familia.id }}{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>{{ '# Família: ' ~  familia.id ~ ' - ' ~ familia.nomefamilia }}</h1><br>
+    {#    <img src="{{ '/uploads/'~ familia.imagem }}">#}
+    <br>
+    <h2>{{ familia.endereco }}</h2>
+    <br>
+    <h2>{{ familia.bairro }}</h2>
+    <br>
+    <h2>{{ familia.datacadastro|date("d/m/Y") }}</h2>
+    <br>
+    <h2>{{ familia.biografia }}</h2>
+    <br>
+    <h2>{{ familia.telefone }}</h2>
+    <br>
+    <h2>{{ familia.assistenciasocial }}</h2>
+    <br>
+    <h2>{{ familia.situacaoespecial }}</h2>
+    <br>
+    <h2>{{ familia.cadastrounico }}</h2>
+    <br>
+    <h2>{{ familia.beneficiogoverno }}</h2>
+    <br>
+    <h2>{{ familia.rendafamiliar }}</h2>
+    <br>
+
+    <br>
+{% endblock %}

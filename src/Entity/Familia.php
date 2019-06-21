@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -78,46 +79,22 @@ class Familia
      */
     private $visita;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Cesta", mappedBy="familia")
+     */
+    private $cestas;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Pessoa", mappedBy="familia")
+     */
+    private $pessoas;
+
     public function __construct()
     {
         $this->visita = new ArrayCollection();
+        $this->cestas = new ArrayCollection();
+        $this->pessoas = new ArrayCollection();
     }
-
-//    public function __construct()
-//    {
-//        $this->visita = new ArrayCollection();
-//    }
-
-
-//    /**
-//     *@return Collection|Visita[]
-//     */
-//    public function getVisita(): Collection
-//    {
-//        return $this->visita;
-//    }
-//
-//    public function addVisita(Visita $visita): self
-//    {
-//        if(!$this->visita->contains($visita)){
-//            $this->visita[] = $visita;
-//            $visita->setFamilia($this);
-//        }
-//        return $this;
-//    }
-//
-//    public function removeVisita(Visita $visita): self
-//    {
-//        if($this->visita->contains($visita)){
-//            $this->visita->removeElement($visita);
-//
-//            //Set the owning side to null (unless already changed)
-//            if($visita->getFamilia() === $this){
-//                $visita->setFamilia(null);
-//            }
-//        }
-//        return $this;
-//    }
 
     public function __toString()
     {
@@ -286,10 +263,72 @@ class Familia
     }
 
     /**
-     * @return \Doctrine\Common\Collections\Collection|Visita[]
+     * @return Collection|Visita[]
      */
-    public function getVisita(): \Doctrine\Common\Collections\Collection
+    public function getVisita(): Collection
     {
         return $this->visita;
+    }
+
+    /**
+     * @return Collection|Cesta[]
+     */
+    public function getCestas(): Collection
+    {
+        return $this->cestas;
+    }
+
+    public function addCesta(Cesta $cesta): self
+    {
+        if (!$this->cestas->contains($cesta)) {
+            $this->cestas[] = $cesta;
+            $cesta->setFamilia($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCesta(Cesta $cesta): self
+    {
+        if ($this->cestas->contains($cesta)) {
+            $this->cestas->removeElement($cesta);
+            // set the owning side to null (unless already changed)
+            if ($cesta->getFamilia() === $this) {
+                $cesta->setFamilia(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Pessoa[]
+     */
+    public function getPessoas(): Collection
+    {
+        return $this->pessoas;
+    }
+
+    public function addPessoa(Pessoa $pessoa): self
+    {
+        if (!$this->pessoas->contains($pessoa)) {
+            $this->pessoas[] = $pessoa;
+            $pessoa->setFamilia($this);
+        }
+
+        return $this;
+    }
+
+    public function removePessoa(Pessoa $pessoa): self
+    {
+        if ($this->pessoas->contains($pessoa)) {
+            $this->pessoas->removeElement($pessoa);
+            // set the owning side to null (unless already changed)
+            if ($pessoa->getFamilia() === $this) {
+                $pessoa->setFamilia(null);
+            }
+        }
+
+        return $this;
     }
 }
