@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Todas as Pessoas &#128106;{% endblock %}
+
+{% block body %}
+
+    {# read and display just one flash message type #}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <br>
+    <h2>&#128583; Registro de Pessoas</h2><a class="btn btn-outline-primary float-right"
+                                             href="{{ path('pessoa.criar') }}">&#10133; Nova Pessoa</a> <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Família</td>
+            <td>Nome da Pessoa</td>
+            <td>Data de Nascimento</td>
+            <td>Data de Cadastro</td>
+            <td>Telefone</td>
+            <td>Celular</td>
+            <td>Email</td>
+            <td>Ações</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.id }}</td>
+                <td>{{ pessoa.familia }}</td>
+                <td>-
+                    <a href="{{ path('pessoa.exibir', {id: pessoa.id}) }}">
+                        {{ pessoa.nomepessoa }}
+                    </a>
+                </td>
+                <td>{{ pessoa.datanascimento|date("d/m/Y") }}</td>
+                <td>{{ pessoa.datacadastro|date("d/m/Y") }}</td>
+                <td>{{ pessoa.telefone }}</td>
+                <td>{{ pessoa.celular }}</td>
+                <td>{{ pessoa.email }}</td>
+                <td>
+                    <a class="text-danger" href="{{ path('pessoa.remover', {id: pessoa.id}) }}">
+                        Remover</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

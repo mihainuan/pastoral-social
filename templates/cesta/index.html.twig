@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Todas as Cestas &#128106;{% endblock %}
+
+{% block body %}
+
+    {# read and display just one flash message type #}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <br>
+    <h2>&#128583; Registro de Cestas</h2><a class="btn btn-outline-primary float-right"
+                                            href="{{ path('cesta.criar') }}">&#10133; Nova Cesta</a> <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Família</td>
+            <td>Descrição</td>
+            <td>Data Cesta</td>
+            <td>Ações</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cesta in cestas %}
+            <tr>
+                <td>{{ cesta.id }}</td>
+                <td>{{ cesta.familia }}</td>
+                <td>-
+                    <a href="{{ path('cesta.exibir', {id: cesta.id}) }}">
+                        {{ cesta.descricao }}
+                    </a>
+                </td>
+                <td>{{ cesta.DataCesta|date("d/m/Y") }}</td>
+                <td>
+                    <a class="text-danger" href="{{ path('cesta.remover', {id: cesta.id}) }}">
+                        Remover</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
