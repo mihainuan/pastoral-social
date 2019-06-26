@@ -19,7 +19,12 @@ class VisitaType extends AbstractType
             ->add('familia', EntityType::class, [
                 'class' => Familia::class
             ])
-            ->add('Descricao')
+            ->add('Descricao', null, array(
+                'attr' =>
+                    array(
+
+                        'placeholder' => 'Descrição da Visita',
+                    )))
             ->add('DataVisita')
             ->add('attachment', FileType::class, [
                 'mapped' => false

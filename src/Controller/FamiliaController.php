@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Familia;
-use App\Form\familiaType;
+use App\Form\FamiliaType;
 use App\Repository\FamiliaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -61,7 +61,7 @@ class FamiliaController extends AbstractController
         }
 
         //Returns a response
-        return $this->render('familia/show.html.twig', [
+        return $this->render('familia/criar.html.twig', [
             'form' => $form->createView()
         ]);
     }

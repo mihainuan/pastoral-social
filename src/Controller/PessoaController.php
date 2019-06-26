@@ -61,7 +61,7 @@ class PessoaController extends AbstractController
         }
 
         //Returns a response
-        return $this->render('pessoa/show.html.twig', [
+        return $this->render('pessoa/criar.html.twig', [
             'form' => $form->createView()
         ]);
     }

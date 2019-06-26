@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 /**
  * @Route("/visita", name="visita.")
  */
@@ -54,6 +53,7 @@ class VisitaController extends AbstractController
             if($file){
                 $filename = $fileUploader->uploadFile($file);
                 $visita->setImagem($filename);
+
                 $em->persist($visita);
                 $em->flush();
             }

@@ -62,7 +62,7 @@ class CestaController extends AbstractController
         }
 
         //Returns a response
-        return $this->render('cesta/show.html.twig', [
+        return $this->render('cesta/criar.html.twig', [
             'form' => $form->createView()
         ]);
     }
