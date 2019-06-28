@@ -13,49 +13,51 @@
     {% endfor %}
 
     <br>
-    <h2>Lista de Famílias &#128106;</h2><a class="btn btn-outline-primary float-right"
-                                           href="{{ path('familia.criar') }}">&#10133; Nova Família</a> <br>
+    <h2><big>Lista de Famílias &#128106;</big></h2><a class="btn btn-outline-primary float-right"
+                                                      href="{{ path('familia.criar') }}">&#10133; Nova Família</a> <br>
     <br>
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>#</td>
-            <td>Nome da Família</td>
-            <td>Endereço</td>
-            <td>Bairro</td>
-            <td>Data de Cadastro</td>
-            <td>Bio</td>
-            <td>Telefone</td>
-            <td>Assit.</td>
-            <td>Sit. Esp.</td>
-            <td>Cad. Único</td>
-            <td>Benef. Gov.</td>
-            <td>Renda</td>
-            <td>Ações</td>
+            <td><b>#</b></td>
+            <td><b>Família</b></td>
+            {#            <td><b>Endereço</b></td>#}
+            <td><b>Bairro</b></td>
+            <td><b>Cadastrada em</b></td>
+            {#            <td><b>Bio</b></td>#}
+            <td><b>Telefone</b></td>
+            {#            <td><b>Assit.</b></td>#}
+            {#            <td><b>Sit. Esp.</b></td>#}
+            {#            <td><b>Cad. Único</b></td>#}
+            {#            <td><b>Benef. Gov.</b></td>#}
+            {#            <td><b>Renda</b></td>#}
+            <td><i></i></td>
         </tr>
         </thead>
         <tbody>
         {% for familia in familias %}
             <tr>
                 <td>{{ familia.id }}</td>
-                <td>-
+                <td>
                     <a href="{{ path('familia.exibir', {id: familia.id}) }}">
                         {{ familia.nomefamilia }}
                     </a>
                 </td>
-                <td>{{ familia.endereco }}</td>
+                {#                <td>{{ familia.endereco }}</td>#}
                 <td>{{ familia.bairro }}</td>
                 <td>{{ familia.datacadastro|date("d/m/Y") }}</td>
-                <td>{{ familia.biografia }}</td>
+                {#                <td>{{ familia.biografia }}</td>#}
                 <td>{{ familia.telefone }}</td>
-                <td>{{ familia.assistenciasocial }}</td>
-                <td>{{ familia.situacaoespecial }}</td>
-                <td>{{ familia.cadastrounico }}</td>
-                <td>{{ familia.beneficiogoverno }}</td>
-                <td>{{ familia.rendafamiliar }}</td>
-                <td>
-                    <a class="text-danger" href="{{ path('familia.remover', {id: familia.id}) }}">
-                        Remover</a>
+                {#                <td>{{ familia.assistenciasocial }}</td>#}
+                {#                <td>{{ familia.situacaoespecial }}</td>#}
+                {#                <td>{{ familia.cadastrounico }}</td>#}
+                {#                <td>{{ familia.beneficiogoverno }}</td>#}
+                {#                <td>{{ familia.rendafamiliar }}</td>#}
+                <td class="float-right">
+                    <a class="btn btn-outline-success btn-sm" href="{{ path('familia.editar', {id: familia.id}) }}">
+                        <b>&#9998;Editar</b></a>
+                    <a class="btn btn-outline-danger btn-sm" href="{{ path('familia.remover', {id: familia.id}) }}">
+                        <b>&#128465;Remover</b></a>
                 </td>
             </tr>
         {% endfor %}

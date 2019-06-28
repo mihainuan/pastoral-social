@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Familia;
 use App\Form\FamiliaType;
 use App\Repository\FamiliaRepository;
+use App\Services\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +33,7 @@ class FamiliaController extends AbstractController
      * @Route("/criar", name="criar")
      * @param Request $request
      */
-    public function create(Request $request)
+    public function create(Request $request, FileUploader $fileUploader)
     {
         //Cria uma nova familia
         $familia = new Familia();
@@ -47,16 +48,55 @@ class FamiliaController extends AbstractController
             //Entity Manager
             $em = $this->getDoctrine()->getManager();
 
-//            /** @var UploadedFile $file */
-//            $file = $request->files->get('familia')['attachment'];
-//            //Check if I have the file before I upload
-//            if($file){
-//                $filename = $fileUploader->uploadFile($file);
-//                $familia->setImagem($filename);
+            /** @var UploadedFile $file */
+            $file = $request->files->get('pessoa')['attachment'];
+            //Check if I have the file before I upload
+            if ($file) {
+                $filename = $fileUploader->uploadFile($file);
+                $familia->setImagem($filename);
 
-            $em->persist($familia);
-            $em->flush();
-//            }
+                $em->persist($familia);
+                $em->flush();
+            }
+            return $this->redirect($this->generateUrl('familia.index'));
+        }
+
+        //Returns a response
+        return $this->render('familia/criar.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/editar/{id}", name="editar")*
+     * @param Familia $familia
+     * @param Request $request
+     */
+    public function edit(Familia $familia, Request $request, FileUploader $fileUploader)
+    {
+        $form = $this->createForm(FamiliaType::class, $familia);
+
+        $form->handleRequest($request);
+        $form->getErrors();
+
+        if ($form->isSubmitted()) {
+
+            //Entity Manager
+            $em = $this->getDoctrine()->getManager();
+
+            /** @var UploadedFile $file */
+            $form->getData();
+            $file = $request->files->get('familia')['attachment'];
+            //Check if I have the file before I upload
+            if ($file) {
+                $filename = $fileUploader->uploadFile($file);
+                $familia->setImagem($filename);
+
+                $em->persist($familia);
+                $em->flush();
+            }
+
+            $this->addFlash('success', 'Familia atualizada com sucesso!');
             return $this->redirect($this->generateUrl('familia.index'));
         }
 

@@ -67,6 +67,45 @@ class PessoaController extends AbstractController
     }
 
     /**
+     * @Route("/editar/{id}", name="editar")*
+     * @param Pessoa $pessoa
+     * @param Request $request
+     */
+    public function edit(Pessoa $pessoa, Request $request, FileUploader $fileUploader)
+    {
+        $form = $this->createForm(PessoaType::class, $pessoa);
+
+        $form->handleRequest($request);
+        $form->getErrors();
+
+        if ($form->isSubmitted()) {
+
+            //Entity Manager
+            $em = $this->getDoctrine()->getManager();
+
+            /** @var UploadedFile $file */
+            $form->getData();
+            $file = $request->files->get('pessoa')['attachment'];
+            //Check if I have the file before I upload
+            if ($file) {
+                $filename = $fileUploader->uploadFile($file);
+                $pessoa->setImagem($filename);
+
+                $em->persist($pessoa);
+                $em->flush();
+            }
+
+            $this->addFlash('success', 'Pessoa atualizada com sucesso!');
+            return $this->redirect($this->generateUrl('pessoa.index'));
+        }
+
+        //Returns a response
+        return $this->render('pessoa/criar.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
      * @Route("/exibir/{id}", name="exibir")
      * @param Pessoa $pessoa
      * @return Response

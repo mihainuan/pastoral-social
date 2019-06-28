@@ -67,6 +67,45 @@ class CestaController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/editar/{id}", name="editar")*
+     * @param Cesta $cesta
+     * @param Request $request
+     */
+    public function edit(Cesta $cesta, Request $request, FileUploader $fileUploader)
+    {
+        $form = $this->createForm(CestaType::class, $cesta);
+
+        $form->handleRequest($request);
+        $form->getErrors();
+
+        if ($form->isSubmitted()) {
+
+            //Entity Manager
+            $em = $this->getDoctrine()->getManager();
+
+            /** @var UploadedFile $file */
+            $form->getData();
+            $file = $request->files->get('cesta')['attachment'];
+            //Check if I have the file before I upload
+            if ($file) {
+                $filename = $fileUploader->uploadFile($file);
+                $cesta->setImagem($filename);
+
+                $em->persist($cesta);
+                $em->flush();
+            }
+
+            $this->addFlash('success', 'Cesta atualizada com sucesso!');
+            return $this->redirect($this->generateUrl('cesta.index'));
+        }
+
+        //Returns a response
+        return $this->render('cesta/criar.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
 
     /**
      * @Route("/exibir/{id}", name="exibir")

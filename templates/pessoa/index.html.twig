@@ -12,21 +12,21 @@
         </div>
     {% endfor %}
     <br>
-    <h2>&#128583; Registro de Pessoas</h2><a class="btn btn-outline-primary float-right"
-                                             href="{{ path('pessoa.criar') }}">&#10133; Nova Pessoa</a> <br>
+    <h2><big>Registro de Pessoas &#128583;</big></h2><a class="btn btn-outline-primary float-right"
+                                                        href="{{ path('pessoa.criar') }}">&#10133; Nova Pessoa</a> <br>
     <br>
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>#</td>
-            <td>Família</td>
-            <td>Nome da Pessoa</td>
-            <td>Data de Nascimento</td>
-            <td>Data de Cadastro</td>
-            <td>Telefone</td>
-            <td>Celular</td>
-            <td>Email</td>
-            <td>Ações</td>
+            <td><b>#</b></td>
+            <td><b>Família</b></td>
+            <td><b>Nome da Pessoa</b></td>
+            {#            <td><b>Data de Nascimento</b></td>#}
+            {#            <td><b>Data de Cadastro</b></td>#}
+            <td><b>Telefone</b></td>
+            <td><b>Celular</b></td>
+            <td><b>Email</b></td>
+            <td><b></b></td>
         </tr>
         </thead>
         <tbody>
@@ -34,19 +34,21 @@
             <tr>
                 <td>{{ pessoa.id }}</td>
                 <td>{{ pessoa.familia }}</td>
-                <td>-
+                <td>
                     <a href="{{ path('pessoa.exibir', {id: pessoa.id}) }}">
                         {{ pessoa.nomepessoa }}
                     </a>
                 </td>
-                <td>{{ pessoa.datanascimento|date("d/m/Y") }}</td>
-                <td>{{ pessoa.datacadastro|date("d/m/Y") }}</td>
+                {#                <td>{{ pessoa.datanascimento|date("d/m/Y") }}</td>#}
+                {#                <td>{{ pessoa.datacadastro|date("d/m/Y") }}</td>#}
                 <td>{{ pessoa.telefone }}</td>
                 <td>{{ pessoa.celular }}</td>
                 <td>{{ pessoa.email }}</td>
-                <td>
-                    <a class="text-danger" href="{{ path('pessoa.remover', {id: pessoa.id}) }}">
-                        Remover</a>
+                <td class="float-right">
+                    <a class="btn btn-outline-success btn-sm" href="{{ path('pessoa.editar', {id: pessoa.id}) }}">
+                        <b>&#9998;Editar</b></a>
+                    <a class="btn btn-outline-danger btn-sm" href="{{ path('pessoa.remover', {id: pessoa.id}) }}">
+                        <b>&#128465;Remover</b></a>
                 </td>
             </tr>
         {% endfor %}

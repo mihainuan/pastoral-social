@@ -89,6 +89,11 @@ class Familia
      */
     private $pessoas;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imagem;
+
     public function __construct()
     {
         $this->visita = new ArrayCollection();
@@ -328,6 +333,18 @@ class Familia
                 $pessoa->setFamilia(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImagem(): ?string
+    {
+        return $this->imagem;
+    }
+
+    public function setImagem(?string $imagem): self
+    {
+        $this->imagem = $imagem;
 
         return $this;
     }

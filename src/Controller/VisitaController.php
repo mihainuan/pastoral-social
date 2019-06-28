@@ -57,6 +57,9 @@ class VisitaController extends AbstractController
                 $em->persist($visita);
                 $em->flush();
             }
+
+            $this->addFlash('success', 'Visita criada com sucesso!');
+
             return $this->redirect($this->generateUrl('visita.index'));
         }
 
@@ -65,6 +68,47 @@ class VisitaController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+
+    /**
+     * @Route("/editar/{id}", name="editar")     *
+     * @param Visita $visita
+     * @param Request $request
+     */
+    public function edit(Visita $visita, Request $request, FileUploader $fileUploader)
+    {
+        $form = $this->createForm(VisitaType::class, $visita);
+
+        $form->handleRequest($request);
+        $form->getErrors();
+
+        if ($form->isSubmitted()) {
+
+            //Entity Manager
+            $em = $this->getDoctrine()->getManager();
+
+            /** @var UploadedFile $file */
+            $form->getData();
+            $file = $request->files->get('visita')['attachment'];
+            //Check if I have the file before I upload
+            if ($file) {
+                $filename = $fileUploader->uploadFile($file);
+                $visita->setImagem($filename);
+
+                $em->persist($visita);
+                $em->flush();
+            }
+
+            $this->addFlash('success', 'Visita atualizada com sucesso!');
+            return $this->redirect($this->generateUrl('visita.index'));
+        }
+
+        //Returns a response
+        return $this->render('visita/criar.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
 
     /**
      * @Route("/exibir/{id}", name="exibir")

@@ -12,17 +12,17 @@
         </div>
     {% endfor %}
     <br>
-    <h2>&#128583; Registro de Cestas</h2><a class="btn btn-outline-primary float-right"
-                                            href="{{ path('cesta.criar') }}">&#10133; Nova Cesta</a> <br>
+    <h2><big>Registro de Cestas &#128583;</big></h2><a class="btn btn-outline-primary float-right"
+                                                       href="{{ path('cesta.criar') }}">&#10133; Nova Cesta</a> <br>
     <br>
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>#</td>
-            <td>Família</td>
-            <td>Descrição</td>
-            <td>Data Cesta</td>
-            <td>Ações</td>
+            <td><b>#</b></td>
+            <td><b>Família</b></td>
+            <td><b>Descrição da Cesta</b></td>
+            <td><b>Data da Cesta</b></td>
+            <td></td>
         </tr>
         </thead>
         <tbody>
@@ -30,15 +30,17 @@
             <tr>
                 <td>{{ cesta.id }}</td>
                 <td>{{ cesta.familia }}</td>
-                <td>-
+                <td>
                     <a href="{{ path('cesta.exibir', {id: cesta.id}) }}">
                         {{ cesta.descricaocesta }}
                     </a>
                 </td>
                 <td>{{ cesta.DataCesta|date("d/m/Y") }}</td>
-                <td>
-                    <a class="text-danger" href="{{ path('cesta.remover', {id: cesta.id}) }}">
-                        Remover</a>
+                <td class="float-right">
+                    <a class="btn btn-outline-success btn-sm" href="{{ path('cesta.editar', {id: cesta.id}) }}">
+                        <b>&#9998;Editar</b></a>
+                    <a class="btn btn-outline-danger btn-sm" href="{{ path('cesta.remover', {id: cesta.id}) }}">
+                        <b>&#128465;Remover</b></a>
                 </td>
             </tr>
         {% endfor %}
